@@ -34,6 +34,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--dourado-claro)
   font-size: 12px; color: var(--dourado-claro); font-weight: 600;
 }
 .framed { position: relative; border: 1px solid rgba(201,168,76,0.55); }
+.framed > .c2 { position: absolute; inset: 0; pointer-events: none; }
 .framed::before, .framed::after, .framed .c2::before, .framed .c2::after {
   content: ''; position: absolute; width: 22px; height: 22px;
   border-color: var(--dourado); border-style: solid; border-width: 0;
@@ -103,7 +104,7 @@ section { padding: 100px 0; position: relative; }
 .autora { background: var(--vinho); }
 .autora .wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
 .autora-box { background: var(--vinho-escuro); padding: 50px 40px; position: relative; }
-.autora-portrait { width: 240px; height: 240px; object-fit: cover; object-position: center; border-radius: 2px; border: 1px solid var(--dourado); margin-bottom: 26px; background: rgba(201,168,76,0.06); }
+.autora-portrait { width: min(100%, 320px); height: auto; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 2px; border: 1px solid var(--dourado); margin: 0 auto 30px; background: rgba(201,168,76,0.06); box-shadow: 0 14px 30px rgba(0,0,0,.22); }
 .autora-box h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--branco); font-weight: 700; }
 .autora-box .role { font-family: 'Raleway', sans-serif; font-size: 13.5px; letter-spacing: .6px; color: var(--dourado-claro); margin-top: 6px; margin-bottom: 20px; }
 .autora-box p { font-size: 14.5px; line-height: 1.75; opacity: .9; }
@@ -163,10 +164,11 @@ footer .signoff { margin-bottom: 18px; font-family: 'Playfair Display', serif; f
   .autora .wrap { gap: 36px; }
   .autora-copy { order: -1; }
   .autora-box { padding: 36px 24px; }
-  .autora-portrait { width: min(260px, 100%); height: auto; aspect-ratio: 1; margin-left: auto; margin-right: auto; }
+  .autora-portrait { width: min(280px, 100%); }
   .oferta-card { padding: 40px 24px; }
   section { padding: 70px 0; }
   .floating-cta { left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); justify-content: center; padding: 13px 18px; font-size: 11.5px; }
+  footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 }
 
 @media (max-width: 400px) {
